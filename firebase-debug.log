@@ -1,0 +1,26 @@
+[debug] [2024-07-29T19:35:00.776Z] ----------------------------------------------------------------------
+[debug] [2024-07-29T19:35:00.777Z] Command:       /home/alain/.nvm/versions/node/v18.19.0/bin/node /home/alain/.nvm/versions/node/v18.19.0/bin/firebase deploy
+[debug] [2024-07-29T19:35:00.777Z] CLI Version:   13.13.1
+[debug] [2024-07-29T19:35:00.777Z] Platform:      linux
+[debug] [2024-07-29T19:35:00.777Z] Node Version:  v18.19.0
+[debug] [2024-07-29T19:35:00.778Z] Time:          Mon Jul 29 2024 14:35:00 GMT-0500 (Peru Standard Time)
+[debug] [2024-07-29T19:35:00.778Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-29T19:35:00.780Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-07-29T19:35:00.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-29T19:35:00.843Z] > authorizing via signed-in user (alainhuntt@gmail.com)
+[debug] [2024-07-29T19:35:00.843Z] [iam] checking project planify-web for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-07-29T19:35:00.844Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/planify-web:testIamPermissions [none]
+[debug] [2024-07-29T19:35:00.844Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/planify-web:testIamPermissions x-goog-quota-user=projects/planify-web
+[debug] [2024-07-29T19:35:00.844Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/planify-web:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-07-29T19:35:02.082Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-07-29T19:35:02.082Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-07-29T19:35:02.490Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/planify-web:testIamPermissions 401
+[debug] [2024-07-29T19:35:02.490Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/planify-web:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2024-07-29T19:35:02.491Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-07-29T19:35:02.492Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/planify-web [none]
+[debug] [2024-07-29T19:35:02.773Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/planify-web 401
+[debug] [2024-07-29T19:35:02.773Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/planify-web {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-07-29T19:35:02.773Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
