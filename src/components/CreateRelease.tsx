@@ -1,7 +1,6 @@
 import { db } from "@/services/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function CreateRelease() {
   const [title, setTitle] = useState("");

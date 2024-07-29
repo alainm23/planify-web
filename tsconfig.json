@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/home/alain/Proyectos/planify-web",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
