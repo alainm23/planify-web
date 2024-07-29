@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Icon from "node_modules/astro-icon/components/Icon.astro";
-import CreateRelease from '@/components/CreateRelease';
+import CreateReleaseComponent from '@/components/CreateRelease';
 ---
 
 <Layout
@@ -16,6 +16,6 @@ import CreateRelease from '@/components/CreateRelease';
       <Icon name="shield-tick" class="text-4xl" />
       Create Release
     </h2>
-    <CreateRelease client:load></CreateRelease>
+    <CreateReleaseComponent client:load></CreateRelease>
   </SectionContainer >
 </Layout>
