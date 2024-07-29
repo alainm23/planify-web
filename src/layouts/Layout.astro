@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
+const { userEmail } = Astro.locals;
 ---
 
 <!doctype html>
@@ -33,6 +34,7 @@ const { description, title } = Astro.props;
     >
     </div>
     <Header />
+    {userEmail && <p>Welcome back, {userEmail}</p>}
     <slot />
     <Footer />
     <style is:global>

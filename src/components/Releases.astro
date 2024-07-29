@@ -9,14 +9,13 @@ const querySnapshot = await getDocs(query(collection(db, "Releases")));
 const releases = querySnapshot.docs.map((doc) => {
   return { documentId: doc.id, ...doc.data() };
 }) as any[];
-
 ---
 
 <ol class="relative mt-16">
   {
-    releases.map((item) => (
+    releases.map((item: any, index: number) => (
       <li class="">
-        <ReleaseItem {...item} />
+        <ReleaseItem {...item} index={index} />
       </li>
     ))
   }

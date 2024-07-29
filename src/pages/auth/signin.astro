@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Icon from "node_modules/astro-icon/components/Icon.astro";
+import Login from "@/components/Login";
+---
+
+<Layout
+  title="Planify | signin"
+  description="Discover the latest updates in Planify."
+>
+  <SectionContainer class="py-44 pb-32 px-12 px-md-0 flex flex-col gap-y-10">
+    <h2
+      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+    >
+      <Icon name="shield-tick" class="text-4xl" />
+      Sign In
+    </h2>
+
+    <Login client:load />
+  </SectionContainer>
+</Layout>
