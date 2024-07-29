@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/home/alain/Proyectos/planify-web",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
