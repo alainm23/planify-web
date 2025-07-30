@@ -23,26 +23,25 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Ejecutar script para obtener releases
-        run: npm run fetch:releases
-
       - name: Configurar Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b auto/update-releases
 
-      - name: Comprobar cambios y crear rama
+      - name: Ejecutar script para obtener releases
+        run: npm run fetch:releases
+
+      - name: Comprobar cambios y hacer commit
         run: |
           if git diff --quiet; then
             echo "No hay cambios. Saliendo."
             exit 0
           fi
 
-          BRANCH_NAME="auto/update-releases"
-          git checkout -b $BRANCH_NAME
           git add src/data/releases.json
           git commit -m "chore: update releases.json [auto]"
-          git push origin $BRANCH_NAME --force
+          git push origin auto/update-releases --force
 
       - name: Crear Pull Request
         uses: peter-evans/create-pull-request@v5
