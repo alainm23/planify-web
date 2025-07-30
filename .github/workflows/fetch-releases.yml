@@ -3,7 +3,7 @@ name: Fetch Releases
 on:
   schedule:
     - cron: "0 5 * * 0" # Cada domingo a las 5:00 AM UTC
-  workflow_dispatch: # Opción para ejecutarlo manualmente si quieres
+  workflow_dispatch:
 
 jobs:
   fetch:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
@@ -24,15 +26,29 @@ jobs:
       - name: Ejecutar script para obtener releases
         run: npm run fetch:releases
 
-      - name: Autenticarse con GitHub usando token
-        uses: actions/setup-git@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Hacer commit si hay cambios
+      - name: Configurar Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Comprobar cambios y crear rama
+        run: |
+          if git diff --quiet; then
+            echo "No hay cambios. Saliendo."
+            exit 0
+          fi
+
+          BRANCH_NAME="auto/update-releases"
+          git checkout -b $BRANCH_NAME
           git add src/data/releases.json
-          git commit -m "chore: update releases.json [auto]" || echo "No hay cambios"
-          git push
+          git commit -m "chore: update releases.json [auto]"
+          git push origin $BRANCH_NAME --force
+
+      - name: Crear Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.TOKEN }}
+          branch: auto/update-releases
+          title: "chore: update releases.json [auto]"
+          body: "Este PR fue generado automáticamente para actualizar releases.json."
+          base: main
