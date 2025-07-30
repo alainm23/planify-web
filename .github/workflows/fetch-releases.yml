@@ -1,0 +1,33 @@
+name: Fetch Releases
+
+on:
+  schedule:
+    - cron: "0 5 * * 0" # Cada domingo a las 5:00 AM UTC
+  workflow_dispatch: # Opción para ejecutarlo manualmente si quieres
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar script para obtener releases
+        run: npm run fetch:releases
+
+      - name: Hacer commit si hay cambios
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/releases.json
+          git commit -m "chore: update releases.json [auto]" || echo "No hay cambios"
+          git push
