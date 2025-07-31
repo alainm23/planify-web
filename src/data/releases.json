@@ -1,5 +1,16 @@
 [
   {
+    "version": "4.14.0",
+    "date": "2025-07-20",
+    "items": [
+      "Improved task handling in the Today view, including real-time updates and midnight refresh fixes - thanks to @igor-semenov.",
+      "Nextcloud login flow redesigned for better UX and stability - thanks to @byquanton.",
+      "Fixed crashes caused by UTF-8 character handling - thanks to @byquanton.",
+      "Russian translation added — thanks to @Heinrich-XIAO.",
+      "Refactored utility methods and internal cleanup."
+    ]
+  },
+  {
     "version": "4.13.0",
     "date": "2025-07-18",
     "items": [
