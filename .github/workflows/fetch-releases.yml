@@ -2,7 +2,7 @@ name: Fetch Releases
 
 on:
   schedule:
-    - cron: "0 5 * * 0" # Cada domingo a las 5:00 AM UTC
+    - cron: "0 14 * * 1" # Every Monday at 14:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -10,32 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar el repositorio
+      - name: Clone the repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.TOKEN }}
-          fetch-depth: 0 # Importante para poder hacer push correctamente
+          fetch-depth: 0 # Required to push changes properly
 
-      - name: Configurar Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: npm install
 
-      - name: Ejecutar script para obtener releases
+      - name: Run fetch script
         run: npm run fetch:releases
 
-      - name: Configurar Git
+      - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Comprobar y subir cambios directamente a main
+      - name: Check for changes and push to main
         run: |
           if git diff --quiet; then
-            echo "No hay cambios. Saliendo."
+            echo "No changes. Exiting."
             exit 0
           fi
 
