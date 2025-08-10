@@ -1,5 +1,27 @@
 [
   {
+    "version": "4.13.2",
+    "date": "2025-08-09",
+    "items": [
+      "Fixed all-day events detection to use local time instead of UTC. Fixes #1449",
+      "Updated Bulgarian translation.",
+      "Fixed project view destruction timing during transitions.",
+      "Only allow valid SSL certificates.",
+      "Added option to manually enter Todoist token. Fixes #1481 #1445",
+      "Disabled keyboard shortcuts when Entry regains focus after closing a dialog. Fixes #1543 #1539",
+      "Avoided resetting TextView content when clicking while editing. Fixes #1541",
+      "Limited description text area height and enabled scroll. Fixes #1473",
+      "Fixed placeholder behavior in TextView.",
+      "Simplified time label formatting logic. Fixes #1447",
+      "Added natural sort comparison for strings with numbers. Fixes #1080",
+      "Fixed duplication turning notes into tasks. Fixes #1472",
+      "Improved layout alignment for note-type tasks.",
+      "Fixed Pinboard not updating correctly.",
+      "Added Discord link.",
+      "Show completed tasks below pending tasks with pagination. Fixes #1614 #1565 #1415 #1417"
+    ]
+  },
+  {
     "version": "4.13.0",
     "date": "2025-07-18",
     "items": [
