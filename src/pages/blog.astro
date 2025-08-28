@@ -16,22 +16,47 @@ const posts = (await getCollection("blog")).sort(
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      <h1
+        class="text-4xl text-center font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
       >
-        <Icon name="sparkles-2" class="text-4xl" />
-        Blog
-      </h2>
+        Planify
+      </h1>
+      <p
+        class="mt-6 text-xl text-center text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+      >
+        Forget about forgetting things
+      </p>
 
-      {
-        posts.map((post: any) => (
-          <article class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6 last:border-none last:pb-0 last:mb-0">
-            <h2 class="text-xl font-semibold">{post.data.title}</h2>
-            <p class="text-gray-500 text-sm mb-6">{post.data.date.toDateString()}</p>
-            <Markdown post={post} />
-          </article>
-        ))
-      }
+      <div class="flex justify-center mt-6">
+        <a href="https://flathub.org/apps/details/io.github.alainm23.planify"
+          ><img
+            class="flathub"
+            width="240"
+            alt="Download on Flathub"
+            src="https://flathub.org/assets/badges/flathub-badge-en.png"
+          /></a
+        >
+      </div>
     </SectionContainer>
   </main>
+  <SectionContainer class="pb-32 px-12 px-md-0 flex flex-col gap-y-10">
+    <h2
+      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+    >
+      <Icon name="sparkles-2" class="text-4xl" />
+      Blog
+    </h2>
+
+    {
+      posts.map((post: any) => (
+        <article class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6 last:border-none last:pb-0 last:mb-0">
+          <h2 class="text-2xl text-center font-semibold">{post.data.title}</h2>
+          <p class="text-gray-500 text-center text-sm mb-6">
+            {post.data.date.toDateString()}
+          </p>
+          <Markdown post={post} />
+        </article>
+      ))
+    }
+  </SectionContainer>
 </Layout>
