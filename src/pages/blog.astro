@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import Markdown from "@/components/Markdown.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a: any, b: any) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout
+  title="Planify | What's New"
+  description="Discover the latest updates in Planify."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Icon name="sparkles-2" class="text-4xl" />
+        Blog
+      </h2>
+
+      {
+        posts.map((post: any) => (
+          <article class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6 last:border-none last:pb-0 last:mb-0">
+            <h2 class="text-xl font-semibold">{post.data.title}</h2>
+            <p class="text-gray-500 text-sm mb-6">{post.data.date.toDateString()}</p>
+            <Markdown post={post} />
+          </article>
+        ))
+      }
+    </SectionContainer>
+  </main>
+</Layout>

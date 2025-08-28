@@ -1,0 +1,12 @@
+---
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<div class="prose dark:prose-invert max-w-none">
+  <Content />
+</div>
