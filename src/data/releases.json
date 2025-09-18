@@ -1,5 +1,36 @@
 [
   {
+    "version": "4.13.4",
+    "date": "2025-08-27",
+    "items": [
+      "Fixed back button in right sidebar to hide when no parent task exists. Fixes #1590",
+      "Corrected Turkish translations, added missing entries, and improved consistency.",
+      "Show project title in HeaderBar once main title scrolls out of view. Fixes #1589",
+      "Refined Sources view and removed redundant popover button for improved clarity.",
+      "Replaced Gtk.ToggleButton with Adw.ToggleGroup for modernized view switching.",
+      "Simplified \"Expand All\" and \"Collapse All\" into a single toggle button.",
+      "Added \"reminder\" and \"reminders\" keywords to desktop file for easier app search.",
+      "Quick Add now retains the last used project for faster task creation.",
+      "Redesigned Appearance page and fixed related issues.",
+      "Improved drag-and-drop animations in Widgets.ReorderChild and fixed last-item reorder bug.",
+      "Fixed duplicate sync at startup by adjusting network monitor behavior.",
+      "Fixed drag-and-drop at the end of list by adding dedicated bottom drop area. Fixes #1522",
+      "Added font size selector for improved accessibility. Fixes #1403",
+      "Added weekday/weekend options for recurring tasks and refactored DateTimePicker. Fixes #1671",
+      "Added search entry to project selection dialog when moving tasks.",
+      "Introduced a \"Today\" section in the Scheduled view for better planning. Fixes #1550",
+      "Improved day change detection with periodic 5-minute checks for reliability.",
+      "Added fly-to-target animation for priority shortcuts in QuickAdd.",
+      "Improved handling of literal shortcut characters (@, !, p1–p4) in task titles. Fixes #1535",
+      "Improved Control key detection to reliably trigger \"Create More\". Fixes #1452",
+      "Added keyboard shortcuts help popover to task dialog.",
+      "Introduced MarkdownProcessor class for enhanced markdown rendering in task titles. Fixes #1547 #1556",
+      "Default label now auto-fills when creating tasks inside a label window. Fixes #1525",
+      "Fixed attachment opening issues with improved validation and error handling. Fixes #1485",
+      "Partial support for adaptive windows with small screen improvements."
+    ]
+  },
+  {
     "version": "4.13.2",
     "date": "2025-08-09",
     "items": [
