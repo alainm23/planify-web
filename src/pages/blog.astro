@@ -8,6 +8,15 @@ import Markdown from "@/components/Markdown.astro";
 const posts = (await getCollection("blog")).sort(
   (a: any, b: any) => b.data.date.getTime() - a.data.date.getTime()
 );
+
+function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
 ---
 
 <Layout
@@ -48,15 +57,28 @@ const posts = (await getCollection("blog")).sort(
     </h2>
 
     {
-      posts.map((post: any) => (
-        <article class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6 last:border-none last:pb-0 last:mb-0">
-          <h2 class="text-2xl text-center font-semibold">{post.data.title}</h2>
-          <p class="text-gray-500 text-center text-sm mb-6">
-            {post.data.date.toDateString()}
-          </p>
-          <Markdown post={post} />
-        </article>
-      ))
+      posts.map((post: any) => {
+        const slug = generateSlug(post.data.title);
+        return (
+          <article
+            id={slug}
+            class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6 last:border-none last:pb-0 last:mb-0 scroll-mt-20"
+          >
+            <h2 class="text-2xl text-center font-semibold">
+              <a
+                href={`#${slug}`}
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="text-gray-500 text-center text-sm mb-6">
+              {post.data.date.toDateString()}
+            </p>
+            <Markdown post={post} />
+          </article>
+        );
+      })
     }
   </SectionContainer>
 </Layout>
