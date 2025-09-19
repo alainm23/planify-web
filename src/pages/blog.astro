@@ -73,7 +73,12 @@ function generateSlug(title: string): string {
               </a>
             </h2>
             <p class="text-gray-500 text-center text-sm mb-6">
-              {post.data.date.toDateString()}
+              {(() => {
+                const dateStr = post.data.date.toISOString().split('T')[0];
+                const [year, month, day] = dateStr.split('-');
+                const localDate = new Date(year, month - 1, day);
+                return localDate.toDateString();
+              })()}
             </p>
             <Markdown post={post} />
           </article>
