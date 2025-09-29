@@ -1,5 +1,22 @@
 [
   {
+    "version": "4.14.1",
+    "date": "2025-09-28",
+    "items": [
+      "Updated project colors for better readability depending on the selected theme.",
+      "Added support and fixed a crash when syncing accounts with more than 2,000 tasks. A progress counter was also added for large synchronizations.",
+      "Updated the placeholder for the completed tasks view.",
+      "Improved task creation flow when \"Keep Adding\" is enabled by disabling the animation and showing a quick notification instead.",
+      "Improved task description editing on small screens by adding a \"See more\" button for long texts. The input field now also loses focus automatically after 6 seconds to allow global keyboard shortcuts to work seamlessly.",
+      "Quick Add now remembers the last selected section when creating a task.",
+      "Quick Add now includes the \"Pinned\" button and removes the limitation of only 3 pinned tasks. Thanks to Adw.WrapBox, pinning is now unlimited.",
+      "Fixed a bug where tasks were not counted correctly when moved via drag and drop.",
+      "Fixed an issue where deleting a source did not remove its associated labels.",
+      "Fixed a bug where tasks did not sync correctly when using Radicale accounts, and another issue where task lists were renamed incorrectly.",
+      "Fixed a bug where manual task ordering did not always place the task in the correct position."
+    ]
+  },
+  {
     "version": "4.14.0",
     "date": "2025-09-19",
     "items": [
