@@ -1,5 +1,41 @@
 [
   {
+    "version": "4.14.1",
+    "date": "2025-09-28",
+    "items": [
+      "Updated project colors for better readability depending on the selected theme.",
+      "Added support and fixed a crash when syncing accounts with more than 2,000 tasks. A progress counter was also added for large synchronizations.",
+      "Updated the placeholder for the completed tasks view.",
+      "Improved task creation flow when \"Keep Adding\" is enabled by disabling the animation and showing a quick notification instead.",
+      "Improved task description editing on small screens by adding a \"See more\" button for long texts. The input field now also loses focus automatically after 6 seconds to allow global keyboard shortcuts to work seamlessly.",
+      "Quick Add now remembers the last selected section when creating a task.",
+      "Quick Add now includes the \"Pinned\" button and removes the limitation of only 3 pinned tasks. Thanks to Adw.WrapBox, pinning is now unlimited.",
+      "Fixed a bug where tasks were not counted correctly when moved via drag and drop.",
+      "Fixed an issue where deleting a source did not remove its associated labels.",
+      "Fixed a bug where tasks did not sync correctly when using Radicale accounts, and another issue where task lists were renamed incorrectly.",
+      "Fixed a bug where manual task ordering did not always place the task in the correct position."
+    ]
+  },
+  {
+    "version": "4.14.0",
+    "date": "2025-09-19",
+    "items": [
+      "Rewritten CalDAV backend with support for Radicale, Baïkal, and other CalDAV servers — thanks to @byquanton.",
+      "Fixed memory leaks when completing or deleting tasks, and during CalDAV sync — thanks to @markochk.",
+      "Introduced a new view cache system to automatically free unused memory.",
+      "Added new customizable sidebar filters: Tomorrow, Someday, Recurring, No label, and All tasks.",
+      "Improved synchronization: Planify now respects task order from Nextcloud and Todoist, with a new reordering algorithm.",
+      "Work in progress to make WebKit and Evolution dependencies optional, paving the way for Windows and macOS support — thanks to @byquanton.",
+      "Spell checker support in task descriptions.",
+      "Fixed bug when moving tasks with subtasks in Nextcloud/CalDAV projects.",
+      "Updated themes (Light, Dark, Dark Blue) and refined task design for better readability.",
+      "Labels and indicators for notes, reminders, and subtasks are now aligned to the right of task titles.",
+      "Added a quick-add button to every task list.",
+      "New completion animation and updated sound when finishing tasks.",
+      "Completion notification added, so users can easily review completed tasks."
+    ]
+  },
+  {
     "version": "4.13.4",
     "date": "2025-08-27",
     "items": [
