@@ -1,5 +1,22 @@
 [
   {
+    "version": "4.15.1",
+    "date": "2025-10-11",
+    "items": [
+      "Added a new lightweight Markdown editor, optimized for Planify. It features a cleaner design and a contextual popover for formatting when selecting text.",
+      "Added animations to circular progress bars for tasks and projects. Project completion now includes a smooth, satisfying animation.",
+      "Planify now uses Weblate to manage translations. You can help make Planify available in more languages by contributing directly through Weblate. A new translation progress bar and link were added in Preferences.",
+      "Introduced Focus Mode — simply click anywhere outside the focused task to close it. This long-requested feature improves the UX when working with focused tasks and is enabled by default for new installations.",
+      "Improved ESC key behavior. It now closes a focused task or exits multi-selection mode, making it more intuitive to navigate with the keyboard.",
+      "Improved keyboard navigation when selecting projects or labels in Quick Add, making the flow more intuitive and seamless.",
+      "Added multi-selection shortcut: hold Ctrl and click on tasks to perform batch operations such as completing, setting due dates, or priorities more easily.",
+      "Added new context menus in the sidebar and project views. You can now quickly create tasks, projects, or sections with a right-click.",
+      "Added the ability to select your default Inbox project — one of the most requested features. Planify now ensures that at least one source remains visible and prevents hiding the source linked to the default Inbox project.",
+      "Improved the behavior and validation of hidden sources across the app, ensuring consistency in Quick Add, Labels, and Project Picker views.",
+      "Enhanced smoothness and responsiveness when dragging tasks to the end of long project lists. The scroll speed now dynamically adjusts based on cursor position."
+    ]
+  },
+  {
     "version": "4.14.1",
     "date": "2025-09-28",
     "items": [
