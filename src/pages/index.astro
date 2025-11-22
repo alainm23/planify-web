@@ -1,6 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Features from "@/components/Features.astro";
+import Stats from "@/components/Stats.astro";
+import Testimonials from "@/components/Testimonials.astro";
+import FAQ from "@/components/FAQ.astro";
+import CTA from "@/components/CTA.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import { Icon } from "astro-icon/components";
@@ -15,7 +19,8 @@ import { Icon } from "astro-icon/components";
       <Hero />
     </SectionContainer>
   </main>
-  <div class="space-y-24 px-12 px-md-0">
+  
+  <div class="space-y-24 px-12 px-md-0 pb-24">
     <SectionContainer id="features">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -24,6 +29,33 @@ import { Icon } from "astro-icon/components";
         Features
       </h2>
       <Features />
+    </SectionContainer>
+
+    <SectionContainer id="stats">
+      <Stats />
+    </SectionContainer>
+
+    <SectionContainer id="testimonials">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Icon name="heart" class="text-4xl text-red-500" />
+        What People Are Saying
+      </h2>
+      <Testimonials />
+    </SectionContainer>
+
+    <SectionContainer id="faq">
+      <h2
+        class="flex items-center mb-8 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white text-center justify-center"
+      >
+        Frequently Asked Questions
+      </h2>
+      <FAQ />
+    </SectionContainer>
+
+    <SectionContainer id="cta">
+      <CTA />
     </SectionContainer>
   </div>
 </Layout>

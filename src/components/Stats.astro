@@ -1,0 +1,49 @@
+---
+import statsData from "@/data/stats.json";
+
+// Format numbers
+const formatNumber = (num: number) => {
+  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M+`;
+  if (num >= 1000) return `${(num / 1000).toFixed(1)}K+`;
+  return `${num}+`;
+};
+
+const STATS = [
+  {
+    number: formatNumber(statsData.flathubDownloads),
+    label: "Downloads",
+    icon: "📥",
+  },
+  {
+    number: formatNumber(statsData.githubStars),
+    label: "GitHub Stars",
+    icon: "⭐",
+  },
+  {
+    number: `${statsData.languages}+`,
+    label: "Languages",
+    icon: "🌍",
+  },
+  {
+    number: "100%",
+    label: "Open Source",
+    icon: "💝",
+  },
+];
+---
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+  {
+    STATS.map(({ number, label, icon }) => (
+      <div class="flex flex-col items-center text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="text-4xl mb-3">{icon}</div>
+        <div class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
+          {number}
+        </div>
+        <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium">
+          {label}
+        </div>
+      </div>
+    ))
+  }
+</div>

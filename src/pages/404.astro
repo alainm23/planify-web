@@ -1,0 +1,96 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout
+  title="404 - Page Not Found | Planify"
+  description="Oops! The page you're looking for doesn't exist."
+>
+  <SectionContainer class="py-16 md:py-24 px-4">
+    <div class="min-h-[50vh] flex items-center justify-center">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- 404 Illustration -->
+      <div class="mb-8">
+        <div class="text-9xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+          404
+        </div>
+        <div class="flex justify-center mb-6">
+          <div class="relative">
+            <Icon name="sparkles-2" class="w-24 h-24 text-gray-300 dark:text-gray-700 animate-pulse" />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <Icon name="wand" class="w-12 h-12 text-blue-500 dark:text-blue-400" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Oops! Task Not Found
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+        Looks like this page got completed and archived. Let's get you back on track!
+      </p>
+
+      <!-- Quick Links -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <a
+          href="/"
+          class="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+        >
+          <Icon name="wand" class="w-5 h-5" />
+          Go Home
+        </a>
+        <a
+          href="/changelog"
+          class="flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-lg transition-colors"
+        >
+          <Icon name="sparkles-2" class="w-5 h-5" />
+          View Changelog
+        </a>
+      </div>
+
+      <!-- Popular Pages -->
+      <div class="border-t border-gray-200 dark:border-gray-800 pt-8">
+        <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
+          Popular Pages
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <a href="/blog" class="text-blue-600 dark:text-blue-400 hover:underline">
+            Blog
+          </a>
+          <span class="text-gray-400">•</span>
+          <a href="/support" class="text-blue-600 dark:text-blue-400 hover:underline">
+            Support
+          </a>
+          <span class="text-gray-400">•</span>
+          <a href="/privacy-policy" class="text-blue-600 dark:text-blue-400 hover:underline">
+            Privacy
+          </a>
+          <span class="text-gray-400">•</span>
+          <a href="https://github.com/alainm23/planify" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </SectionContainer>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
