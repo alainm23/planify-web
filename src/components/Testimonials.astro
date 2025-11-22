@@ -1,0 +1,68 @@
+---
+const TESTIMONIALS = [
+  {
+    quote: "Planify is exactly what I needed! Clean interface, fast, and works perfectly with Todoist. Best task manager for Linux.",
+    author: "Sarah Chen",
+    platform: "Mastodon",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+  },
+  {
+    quote: "Finally, a native task manager that doesn't feel like a web app. The drag & drop is so smooth!",
+    author: "Marcus Weber",
+    platform: "GitHub",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+  },
+  {
+    quote: "Switched from Todoist's web app to Planify. The offline mode and Nextcloud sync are game changers.",
+    author: "Ana Rodríguez",
+    platform: "Mastodon",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana",
+  },
+  {
+    quote: "The Quick Add feature with natural language is brilliant. I can add tasks without breaking my flow.",
+    author: "David Kim",
+    platform: "Reddit",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
+  },
+  {
+    quote: "Beautiful, fast, and respects my privacy. Planify is what GNOME apps should be.",
+    author: "Emma Laurent",
+    platform: "Mastodon",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
+  },
+  {
+    quote: "The board view and markdown support make this perfect for managing projects. Love it!",
+    author: "João Silva",
+    platform: "Flathub",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Joao",
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    TESTIMONIALS.map(({ quote, author, platform, avatar }) => (
+      <article class="flex flex-col p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+        <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed flex-grow">
+          "{quote}"
+        </p>
+        <div class="flex items-center gap-3 mt-auto">
+          <img
+            src={avatar}
+            alt={`${author} avatar`}
+            class="w-10 h-10 rounded-full"
+            loading="lazy"
+          />
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+              {author}
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              via {platform}
+            </p>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

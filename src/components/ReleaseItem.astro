@@ -7,31 +7,42 @@ interface Props {
 }
 
 const { index, version, items, date }: any = Astro.props;
+const isLatest = index === 0;
 ---
 
 <div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+  class="relative mx-8 md:mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
 >
   <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <span class="text-blue-500 -left-[42px] absolute rounded-full text-5xl"
+    <div class="sticky top-24">
+      <span class={isLatest ? "text-blue-500 -left-[42px] absolute rounded-full text-5xl" : "text-gray-400 dark:text-gray-600 -left-[42px] absolute rounded-full text-5xl"}
         >&bull;</span
       >
 
-      <h3 class={index <= 0 ? "text-xl font-bold text-blue-500" : "text-xl font-semibold text-gray-500 dark:text-white"}>{version}</h3>
-      <!-- <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
-        {version}
-      </h4> -->
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
-        >{date}</time
-      >
+      <div class="flex items-center gap-2 mb-2">
+        <h3 class={isLatest ? "text-2xl font-bold text-blue-600 dark:text-blue-400" : "text-xl font-semibold text-gray-700 dark:text-gray-300"}>
+          {version}
+        </h3>
+        {isLatest && (
+          <span class="px-2 py-1 text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full">
+            Latest
+          </span>
+        )}
+      </div>
+      
+      <time class="block text-sm text-gray-500 dark:text-gray-400">
+        {date}
+      </time>
     </div>
   </div>
+  
   <div
-    class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+    class="relative flex flex-col gap-3 pb-4 text-gray-700 dark:text-gray-300 md:col-span-3"
   >
-    <ul class="list-disc">
-      {items.map((item: any) => <li>{item}</li>)}
+    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+      {items.map((item: any) => (
+        <li class="pl-2">{item}</li>
+      ))}
     </ul>
   </div>
 </div>
