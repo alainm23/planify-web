@@ -1,5 +1,22 @@
 [
   {
+    "version": "4.16.0",
+    "date": "2025-11-21",
+    "items": [
+      "Fixed tasks disappearing from the Today view when moving them to another project.",
+      "Resolved subtask duplication when moving tasks between different backends (e.g., LOCAL ↔ Todoist), ensuring subtasks are added only to their parent instead of both parent and project.",
+      "Reduced redundant toast notifications — now shows only one toast per move operation.",
+      "Fixed issue where Ctrl key events (Ctrl+C, Ctrl+V, Ctrl+A) unintentionally toggled the 'Keep adding' option.",
+      "Added new keyboard shortcut: 'Ctrl+K' to toggle the 'Keep adding' mode, and updated the keyboard shortcuts popover accordingly.",
+      "Added a new natural language date processor with support for ISO 8601 dates, slash/dot formats, time parsing, month names, and casual expressions like 'today', 'tomorrow', and 'now'.",
+      "Introduced full Spanish language support in the date parser, including expressions like 'hoy', 'mañana', 'próxima semana', 'mes pasado', and Spanish month names with or without accents.",
+      "Added 'Labels' item to the task’s context menu for quick label management.",
+      "Added event details popover with direct integration for Google Meet and Microsoft Teams meetings.",
+      "Fixed Quick Add window maximizing unintentionally on double-click, improving overall task creation UX.",
+      "General improvements to performance, design consistency, and overall stability."
+    ]
+  },
+  {
     "version": "4.15.2",
     "date": "2025-11-07",
     "items": [
