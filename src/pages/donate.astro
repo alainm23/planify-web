@@ -87,29 +87,48 @@ import { Icon } from "astro-icon/components";
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <a
-          href="https://www.patreon.com/join/alainm23"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group relative overflow-hidden bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 transition-transform hover:scale-105"
-        >
-          <div class="relative z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <Icon name="patreon" class="w-10 h-10 text-white" />
-              <div>
-                <div class="text-xl font-bold text-white">Patreon</div>
-                <div class="text-sm text-orange-100">Recommended</div>
+        <div class="md:col-span-2 relative">
+          <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+          <a
+            href="https://www.patreon.com/join/alainm23"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative overflow-hidden bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 transition-transform hover:scale-105 block"
+          >
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-4">
+                <Icon name="patreon" class="w-12 h-12 text-white" />
+                <div>
+                  <div class="text-2xl font-bold text-white">Patreon</div>
+                  <div class="text-sm text-orange-100 font-medium">✨ Best Value - New Tiers Available!</div>
+                </div>
+              </div>
+              <p class="text-white/90 mb-6">Join our community of supporters and get exclusive access to development insights, priority polls, and direct influence on Planify's future. Choose from three tiers designed to fit your level of involvement.</p>
+              
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white/10 rounded-lg p-3">
+                  <div class="text-white font-semibold text-sm">Supporter - $2/mo</div>
+                  <div class="text-orange-100 text-xs">Exclusive updates & roadmap</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-3">
+                  <div class="text-white font-semibold text-sm">Enthusiast - $5/mo</div>
+                  <div class="text-orange-100 text-xs">Priority polls & weekly devlogs</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-3">
+                  <div class="text-white font-semibold text-sm">Influencer - $10/mo</div>
+                  <div class="text-orange-100 text-xs">Feature suggestions & recognition</div>
+                </div>
+              </div>
+              
+              <div class="inline-flex items-center gap-2 text-white font-semibold">
+                <span>Become a Patron</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
               </div>
             </div>
-            <p class="text-white/90 text-sm mb-4">Become a patron with monthly support and get exclusive updates</p>
-            <div class="inline-flex items-center gap-2 text-white font-semibold">
-              <span>Support Monthly</span>
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-              </svg>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <a
           href="https://www.paypal.com/paypalme/alainm23"

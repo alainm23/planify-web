@@ -6,75 +6,68 @@ const FEATURES = [
     title: "Modern GTK4 Interface",
     description:
       "Built with GTK4 and libadwaita for a native GNU/Linux experience. Clean, intuitive design with seamless dark mode integration. Lightning-fast performance that respects your system resources.",
-    image: "/features/planify.png",
-    alt: "Planify main interface showing modern GTK4 design",
     icon: "sparkles-2",
+    color: "from-purple-500 to-pink-500",
   },
   {
     title: "Drag & Drop Everything",
     description:
       "Organize effortlessly with natural gestures. Drag tasks between projects, create sub-projects, convert tasks to subtasks, and reorder with smooth animations. The Magic Button makes adding tasks exactly where you want them a breeze.",
-    image: "/features/drag-drop.png",
-    alt: "Drag and drop interface showing task organization",
     icon: "wand",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     title: "Cloud Sync & Privacy",
     description:
       "Full synchronization with Todoist and Nextcloud/CalDAV servers (Radicale, Baïkal). Work offline and sync when you're back online. Multiple accounts supported. Your data, your choice.",
-    image: "/features/sync.png",
-    alt: "Sync settings showing Todoist and Nextcloud integration",
     icon: "shield-tick",
+    color: "from-green-500 to-emerald-500",
   },
   {
     title: "Smart Organization",
     description:
       "Sections, labels, priorities, and custom filters. Board view for visual planning. Calendar integration to see your schedule. Progress tracking for projects. Find anything instantly with powerful search.",
-    image: "/features/organization.png",
-    alt: "Project organization with sections and labels",
     icon: "file-text",
+    color: "from-orange-500 to-red-500",
   },
   {
     title: "Rich Task Details",
     description:
       "Markdown support in titles and descriptions. Multiple reminders per task. Recurring tasks with flexible patterns. File attachments and links. Notes, priorities, and deadlines—all in one place.",
-    image: "/features/task.png",
-    alt: "Task detail view with markdown, attachments, and reminders",
     icon: "file-text",
+    color: "from-indigo-500 to-purple-500",
   },
   {
     title: "Quick Add & Shortcuts",
     description:
       "Add tasks from anywhere with a global keyboard shortcut. Natural language date parsing in English and Spanish. Use @ for labels, # for projects, ! for priorities. Keep adding mode for rapid task entry.",
-    image: "/features/quick-add.png",
-    alt: "Quick Add window with keyboard shortcuts",
     icon: "sparkles-2",
+    color: "from-teal-500 to-blue-500",
   },
 ];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
   {
-    FEATURES.map(({ image, title, description, icon, alt }) => (
-      <article class="flex flex-col group">
-        <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl mb-6">
-          <img
-            alt={alt}
-            class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            src={image}
-            loading="lazy"
-          />
-        </div>
-
-        <div class="flex items-center gap-3 mb-3">
-          <Icon name={icon} class="w-7 h-7 text-blue-500 dark:text-blue-400 flex-shrink-0" />
-          <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">
+    FEATURES.map(({ title, description, icon, color }) => (
+      <article class="group relative">
+        <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-gray-200 dark:hover:border-gray-600 h-full flex flex-col">
+          {/* Icon with gradient background */}
+          <div class={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${color} mb-6 shadow-lg`}>
+            <Icon name={icon} class="w-8 h-8 text-white" />
+          </div>
+          
+          {/* Content */}
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
             {title}
           </h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {description}
+          </p>
+          
+          {/* Subtle hover effect */}
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent to-gray-50 dark:to-gray-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
-        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-400">
-          {description}
-        </p>
       </article>
     ))
   }
