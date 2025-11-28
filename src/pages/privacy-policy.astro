@@ -1,30 +1,188 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
 import SectionContainer from "@/components/SectionContainer.astro";
-import Icon from "node_modules/astro-icon/components/Icon.astro";
+import { Icon } from "astro-icon/components";
+
+const lastUpdated = "November 21, 2025";
 ---
 
 <Layout
-  title="Planify | Privacy Policy"
-  description="Discover the latest updates in Planify."
+  title="Planify Privacy Policy - Your Data, Your Control"
+  description="Planify respects your privacy. We don't collect any personal data. All your information stays on your device or in your own cloud accounts."
 >
-  <SectionContainer class="py-44 pb-32 px-12 px-md-0 flex flex-col gap-y-10">
-    <h2
-      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-    >
-      <Icon name="shield-tick" class="text-4xl" />
-      Privacy Policy
-    </h2>
-    <p>
-      We do not collect any personal data at all. All your app data is either
-      being stored locally on your device or in your own Todoist or Nextcloud
-      account if you have enabled this functionality.
-    </p>
-    <p>
-      Should you have any questions or concerns in regards to our privacy
-      policy, we are always here to help you and you can reach out to us via
-      email address: <b>alainmh23@gmail.com</b>.
-    </p>
+  <!-- Hero -->
+  <SectionContainer class="py-16 md:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-sm font-medium text-green-700 dark:text-green-400 mb-6">
+          <Icon name="shield-tick" class="w-4 h-4" />
+          Privacy First
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Privacy Policy
+        </h1>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Your data belongs to you. Period.
+        </p>
+        
+        <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
+          Last updated: {lastUpdated}
+        </p>
+      </div>
+
+      <!-- TL;DR Box -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-12">
+        <h2 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3 flex items-center gap-2">
+          <Icon name="sparkles-2" class="w-5 h-5" />
+          TL;DR
+        </h2>
+        <p class="text-blue-800 dark:text-blue-200 text-lg leading-relaxed">
+          Planify is a desktop application that runs entirely on your computer. We don't have servers, we don't collect data, and we don't track you. Everything stays on your device or in your own cloud accounts (Todoist/Nextcloud).
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <!-- Data Collection -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <Icon name="shield-tick" class="w-6 h-6 text-green-600 dark:text-green-400" />
+            What We Don't Collect
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            Planify is a native desktop application that runs entirely on your computer. We don't have servers or infrastructure to collect data. This means:
+          </p>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>✓ No servers to send data to</li>
+            <li>✓ No personal information collected (name, email, phone)</li>
+            <li>✓ No usage analytics or tracking</li>
+            <li>✓ No crash reports sent anywhere</li>
+            <li>✓ No advertising or identifiers</li>
+          </ul>
+        </section>
+
+        <!-- Data Storage -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <Icon name="file-text" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            Where Your Data Lives
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            All your tasks, projects, and settings are stored in one of these locations:
+          </p>
+          <div class="space-y-4">
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Local Storage</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm">
+                By default, all data is stored locally on your device using SQLite. Only you have access to this data.
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Todoist (Optional)</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm">
+                If you enable Todoist sync, your data is stored in your Todoist account. Refer to <a href="https://todoist.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Todoist's Privacy Policy</a>.
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Nextcloud/CalDAV (Optional)</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm">
+                If you enable Nextcloud or CalDAV sync, your data is stored on your own server. You have complete control.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Third Parties -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <Icon name="shield-tick" class="w-6 h-6 text-purple-600 dark:text-purple-400" />
+            Third-Party Services
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Planify is a desktop application with no backend servers. The app doesn't use any third-party analytics, advertising, or tracking services. The only external connections are:
+          </p>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300 mt-4">
+            <li>• Todoist API (only if you choose to enable Todoist sync)</li>
+            <li>• Your Nextcloud/CalDAV server (only if you choose to enable CalDAV sync)</li>
+          </ul>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+            These connections are encrypted, optional, and only occur when you explicitly enable them. Your data goes directly from your computer to your chosen service.
+          </p>
+        </section>
+
+        <!-- Open Source -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <Icon name="heart" class="w-6 h-6 text-red-600 dark:text-red-400" />
+            Open Source Transparency
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Planify is 100% open source. You can review our entire codebase on <a href="https://github.com/alainm23/planify" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a> to verify that we do exactly what we say.
+          </p>
+        </section>
+
+        <!-- Contact -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-400/20 to-purple-400/20 rounded-full translate-y-12 -translate-x-12"></div>
+          
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Icon name="heart" class="w-6 h-6 text-white" />
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Have Questions?</h2>
+            </div>
+            
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-lg">
+              We're here to help! If you have any questions or concerns about this privacy policy, feel free to reach out.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="mailto:alainmh23@gmail.com" 
+                class="group inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <div class="w-5 h-5 bg-white/20 rounded-lg flex items-center justify-center">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <span>Send us an Email</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </a>
+              
+              <a 
+                href="https://github.com/alainm23/planify/discussions" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex items-center gap-3 px-6 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-xl border-2 border-gray-200 dark:border-gray-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <div class="w-5 h-5 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                </div>
+                <span>GitHub Discussions</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </a>
+            </div>
+            
+            <div class="mt-6 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-white/60 dark:border-gray-700/60">
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+                <Icon name="shield-tick" class="w-4 h-4 text-green-500" />
+                We typically respond within 24 hours
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </SectionContainer>
 </Layout>

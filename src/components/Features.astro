@@ -1,55 +1,72 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const FEATURES = [
   {
-    title: "Organize with Elegance and Efficiency",
+    title: "Modern GTK4 Interface",
     description:
-      "Discover Planify, the native multilingual task management application for GNU/Linux. With a minimalist and attractive interface, Planify combines simplicity and functionality so you can focus on what matters. Optimized for performance and ease of use, it enhances your productivity with a hassle-free organization experience. Get organized and achieve more with Planify!",
-    image: "/features/planify.png",
+      "Built with GTK4 and libadwaita for a native GNU/Linux experience. Clean, intuitive design with seamless dark mode integration. Lightning-fast performance that respects your system resources.",
+    icon: "sparkles-2",
+    color: "from-purple-500 to-pink-500",
   },
   {
-    title: "Sync with Todoist and Nextcloud",
+    title: "Drag & Drop Everything",
     description:
-      "Planify is not limited to working locally, it seamlessly integrates with Todoist and Nextcloud. Sync your tasks across multiple devices and platforms, ensuring you always have access to your to-do list, no matter where you are.",
-    image: "/features/sync.png",
+      "Organize effortlessly with natural gestures. Drag tasks between projects, create sub-projects, convert tasks to subtasks, and reorder with smooth animations. The Magic Button makes adding tasks exactly where you want them a breeze.",
+    icon: "wand",
+    color: "from-blue-500 to-cyan-500",
   },
   {
-    title: "Beautiful Tasks",
+    title: "Cloud Sync & Privacy",
     description:
-      "View your tasks elegantly, add notes, priority, attachments, reminders, view URLs, create deadlines and add labels.",
-    image: "/features/task.png",
+      "Full synchronization with Todoist and Nextcloud/CalDAV servers (Radicale, Baïkal). Work offline and sync when you're back online. Multiple accounts supported. Your data, your choice.",
+    icon: "shield-tick",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    title: "Smart Organization",
+    description:
+      "Sections, labels, priorities, and custom filters. Board view for visual planning. Calendar integration to see your schedule. Progress tracking for projects. Find anything instantly with powerful search.",
+    icon: "file-text",
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Rich Task Details",
+    description:
+      "Markdown support in titles and descriptions. Multiple reminders per task. Recurring tasks with flexible patterns. File attachments and links. Notes, priorities, and deadlines—all in one place.",
+    icon: "file-text",
+    color: "from-indigo-500 to-purple-500",
+  },
+  {
+    title: "Quick Add & Shortcuts",
+    description:
+      "Add tasks from anywhere with a global keyboard shortcut. Natural language date parsing in English and Spanish. Use @ for labels, # for projects, ! for priorities. Keep adding mode for rapid task entry.",
+    icon: "sparkles-2",
+    color: "from-teal-500 to-blue-500",
   },
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
   {
-    FEATURES.map(({ image, title, description }, index) => (
-      <article
-        class={
-          index % 2 === 0
-            ? "flex flex-col space-x-0 space-y-8 group md:space-x-8 md:space-y-0 md:flex-row"
-            : "flex flex-col space-x-0 space-y-8 group md:space-x-8 md:space-y-0 md:flex-row-reverse"
-        }
-      >
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl">
-            <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              src={image}
-            />
+    FEATURES.map(({ title, description, icon, color }) => (
+      <article class="group relative">
+        <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-gray-200 dark:hover:border-gray-600 h-full flex flex-col">
+          {/* Icon with gradient background */}
+          <div class={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${color} mb-6 shadow-lg`}>
+            <Icon name={icon} class="w-8 h-8 text-white" />
           </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          
+          {/* Content */}
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
             {title}
           </h3>
-          <div class="flex flex-wrap mt-2">
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
-          </div>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {description}
+          </p>
+          
+          {/* Subtle hover effect */}
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent to-gray-50 dark:to-gray-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
       </article>
     ))

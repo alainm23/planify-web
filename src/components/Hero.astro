@@ -1,41 +1,121 @@
 ---
+import statsData from "@/data/stats.json";
 
+const formatNumber = (num: number) => {
+  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
+  if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
+  return num;
+};
 ---
 
-<div class="pt-4 md:pt-0">
-  <div class="flex justify-center">
+<div class="pt-4 md:pt-0 max-w-5xl mx-auto">
+  <!-- Icon -->
+  <div class="flex justify-center animate-fade-in">
     <img
-      width="128"
-      height="128"
-      class="center"
+      width="160"
+      height="160"
+      class="drop-shadow-2xl"
       src="https://raw.githubusercontent.com/alainm23/planify/master/data/icons/hicolor/scalable/apps/io.github.alainm23.planify.svg"
       alt="Planify Icon"
     />
   </div>
+
+  <!-- Title -->
   <h1
-    class="text-4xl text-center mt-6 font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    class="text-5xl text-center mt-8 font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white"
   >
     Planify
   </h1>
-  <p
-    class="mt-6 text-xl text-center text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    Forget about forgetting things
+
+  <!-- Subtitle -->
+  <p class="mt-4 text-2xl text-center font-semibold text-gray-700 dark:text-gray-200">
+    Task Manager for GNU/Linux
   </p>
 
-  <div class="flex justify-center mt-6">
-    <a href="https://flathub.org/apps/details/io.github.alainm23.planify"
-      ><img
-        class="flathub"
-        width="240"
-        alt="Download on Flathub"
-        src="https://flathub.org/assets/badges/flathub-badge-en.png"
-      /></a
+  <!-- Description -->
+  <p
+    class="mt-4 text-lg text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+  >
+    Never worry about forgetting things again. Organize your life with a beautiful, native task manager that syncs with Todoist and Nextcloud.
+  </p>
+
+  <!-- Social Proof Badges -->
+  <div class="flex flex-wrap justify-center items-center gap-4 mt-6">
+    <a
+      href="https://github.com/alainm23/planify"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
     >
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+      {formatNumber(statsData.githubStars)} stars
+    </a>
+    <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+      </svg>
+      {formatNumber(statsData.flathubDownloads)} downloads
+    </span>
+    <span class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-sm font-medium text-green-700 dark:text-green-400">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      100% Free & Open Source
+    </span>
   </div>
 
-  <img
-    src="https://raw.githubusercontent.com/alainm23/planify/master/data/resources/screenshot/screenshot-04.png"
-    alt="Planify"
-  />
+  <!-- CTAs -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+    <a
+      href="https://flathub.org/apps/details/io.github.alainm23.planify"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+      </svg>
+      Download on Flathub
+    </a>
+    <a
+      href="https://github.com/alainm23/planify"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-lg transition-all duration-300 border-2 border-gray-300 dark:border-gray-600"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+      View on GitHub
+    </a>
+  </div>
+
+  <!-- Screenshot -->
+  <div class="mt-16 rounded-xl overflow-hidden shadow-2xl border-4 border-gray-200 dark:border-gray-700">
+    <img
+      src="https://raw.githubusercontent.com/alainm23/planify/master/data/resources/screenshot/screenshot-04.png"
+      alt="Planify task manager interface"
+      class="w-full"
+      loading="eager"
+    />
+  </div>
 </div>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+</style>

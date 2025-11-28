@@ -102,7 +102,7 @@ Planify thrives thanks to community feedback and contributions. You can help by:
 - **🐛 Report bugs**: Found an issue? [Open an issue on GitHub](https://github.com/alainm23/planify/issues)
 - **💡 Suggest features**: Share your ideas for making Planify even better
 - **📢 Spread the word**: Follow [@planifyapp](https://mastodon.social/@planifyapp) on Mastodon and share with friends
-- **☕ Support development**: [Support Planify's development](/support)
+- **☕ Support development**: [Support Planify's development](/donate)
 
 ---
 
