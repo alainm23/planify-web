@@ -1,5 +1,18 @@
 [
   {
+    "version": "4.17.0",
+    "date": "2025-12-26",
+    "items": [
+      "Added deadline support, separate from due dates, with visual indicators for overdue tasks.",
+      "Overdue tasks are now shown in the Scheduled view with quick reschedule actions.",
+      "Added multi-select support to move multiple tasks between projects.",
+      "Introduced calendar sync and event creation via Evolution Data Server (EDS).",
+      "Improved calendar range views and event date display.",
+      "Fixed task editing issues in Overdue view and projects without tasks.",
+      "Added support for custom URI schemes in the Markdown editor."
+    ]
+  },
+  {
     "version": "4.16.1",
     "date": "2025-11-27",
     "items": [
