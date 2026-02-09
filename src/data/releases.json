@@ -1,5 +1,22 @@
 [
   {
+    "version": "4.18.0",
+    "date": "2026-02-08",
+    "items": [
+      "Refactored Quick Find to use ListView, significantly improving search performance with large result sets, thanks to @byquanton.",
+      "Improved task rendering performance by lazily loading task details and batching ItemRow creation,reducing UI overhead and improving responsiveness, thanks to @byquanton.",
+      "Fixed a crash when typing dates with years below 1000 in the due date picker, thanks to @pgrit.",
+      "Optimized database operations by batching inserts when importing projects and batching deletes when removing them, improving overall performance, thanks to @byquanton.",
+      "Fixed Quick Find getting stuck in multi-select mode by improving Ctrl key detection during mouse events, thanks to @pgrit.",
+      "Added support for Todoist assignment filtering in the Today view, allowing filtering by assigned and unassigned tasks, thanks to @alyraffauf.",
+      "Added a mandatory Todoist API migration flow with a warning and re-login option to ensure continued sync support, thanks to @alainm23.",
+      "Improved Radicale CalDAV compatibility by accepting HTTP 201 responses for PUT requests, fixing sync issues when updating tasks, thanks to @mntmn.",
+      "Fixed filtering by labels in Today and other non-project views, thanks to @byquanton.",
+      "Fixed manual task ordering synchronization with CalDAV and Nextcloud, ensuring consistent ordering after drag and drop actions, thanks to @pgrit.",
+      "Fixed drag and drop not working correctly after using multi-selection, thanks to @pgrit."
+    ]
+  },
+  {
     "version": "4.17.0",
     "date": "2025-12-26",
     "items": [
