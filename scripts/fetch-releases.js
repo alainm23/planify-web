@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import fetch from "node-fetch";
 import { parseStringPromise } from "xml2js";
 
-const xmlUrl = "https://raw.githubusercontent.com/alainm23/planify/refs/heads/main/data/io.github.alainm23.planify.appdata.xml.in.in";
+const xmlUrl = "https://raw.githubusercontent.com/alainm23/planify/refs/heads/main/data/io.github.alainm23.planify.metainfo.xml.in.in";
 
 async function main() {
   const res = await fetch(xmlUrl);
