@@ -44,4 +44,5 @@ jobs:
 
           git add src/data/stats.json
           git commit -m "chore: update stats.json [auto]"
+          git pull --rebase origin main
           git push origin main
