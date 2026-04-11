@@ -1,0 +1,324 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout
+  title="Planify CLI - Manage Tasks from the Command Line"
+  description="Add, list, and update tasks directly from your terminal. Perfect for scripting, voice assistants, and automation."
+>
+  <!-- Hero -->
+  <SectionContainer class="py-16 md:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-full text-sm font-medium text-indigo-700 dark:text-indigo-400 mb-6">
+          <Icon name="wand" class="w-4 h-4" />
+          Command Line Interface
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Planify CLI
+        </h1>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Manage your tasks directly from the terminal. Perfect for scripting, voice assistants, and automation workflows.
+        </p>
+      </div>
+
+      <!-- Installation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Getting Started
+        </h2>
+        
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          The CLI is included with Planify. Use the following command depending on your installation:
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Flatpak</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>flatpak run --command=io.github.alainm23.planify.cli io.github.alainm23.planify &lt;command&gt;</code></pre>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">
+              Tip: Create an alias for convenience:
+            </p>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mt-1"><code>alias planify-cli="flatpak run --command=io.github.alainm23.planify.cli io.github.alainm23.planify"</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Built from source</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>io.github.alainm23.planify.cli &lt;command&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Commands -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Commands
+        </h2>
+
+        <div class="space-y-8">
+          <!-- Add -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">add</h3>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Add a new task</span>
+            </div>
+
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-4"><code>planify-cli add --content "Buy groceries" --project "Personal" --priority 1 --due 2025-01-15</code></pre>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+                    <th class="pb-2 pr-4">Option</th>
+                    <th class="pb-2 pr-4">Short</th>
+                    <th class="pb-2">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700 dark:text-gray-300">
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--content</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-c</td>
+                    <td class="py-2">Task content (required)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--description</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-d</td>
+                    <td class="py-2">Task description</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--project</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-p</td>
+                    <td class="py-2">Project name (defaults to Inbox)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--project-id</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-i</td>
+                    <td class="py-2">Project ID (preferred over name)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--section</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-s</td>
+                    <td class="py-2">Section name</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--priority</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-P</td>
+                    <td class="py-2">1 = high, 2 = medium, 3 = low, 4 = none</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--due</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-D</td>
+                    <td class="py-2">Due date (YYYY-MM-DD)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--labels</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-l</td>
+                    <td class="py-2">Comma-separated label names</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--parent-id</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-a</td>
+                    <td class="py-2">Parent task ID (creates a subtask)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 pr-4 font-mono text-xs">--pin</td>
+                    <td class="py-2 pr-4"></td>
+                    <td class="py-2">Pin the task (true/false)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- List Projects -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">list-projects</h3>
+              <span class="text-sm text-gray-500 dark:text-gray-400">List all projects</span>
+            </div>
+
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli list-projects</code></pre>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mt-3">
+              Returns a JSON array with all projects and their IDs.
+            </p>
+          </div>
+
+          <!-- List -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">list</h3>
+              <span class="text-sm text-gray-500 dark:text-gray-400">List tasks from a project</span>
+            </div>
+
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-4"><code>planify-cli list --project "Personal"</code></pre>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+                    <th class="pb-2 pr-4">Option</th>
+                    <th class="pb-2 pr-4">Short</th>
+                    <th class="pb-2">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700 dark:text-gray-300">
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--project</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-p</td>
+                    <td class="py-2">Project name (defaults to Inbox)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 pr-4 font-mono text-xs">--project-id</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-i</td>
+                    <td class="py-2">Project ID (preferred over name)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Update -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">update</h3>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Update an existing task</span>
+            </div>
+
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-4"><code>planify-cli update --task-id "abc123" --content "Updated task" --complete true</code></pre>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+                    <th class="pb-2 pr-4">Option</th>
+                    <th class="pb-2 pr-4">Short</th>
+                    <th class="pb-2">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700 dark:text-gray-300">
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--task-id</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-t</td>
+                    <td class="py-2">Task ID to update (required)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--content</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-c</td>
+                    <td class="py-2">New task content</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--description</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-d</td>
+                    <td class="py-2">New description</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--project</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-p</td>
+                    <td class="py-2">Move to project by name</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--priority</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-P</td>
+                    <td class="py-2">1 = high, 2 = medium, 3 = low, 4 = none</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--due</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-D</td>
+                    <td class="py-2">Due date (YYYY-MM-DD)</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--labels</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-l</td>
+                    <td class="py-2">Comma-separated label names</td>
+                  </tr>
+                  <tr class="border-b border-gray-100 dark:border-gray-700/50">
+                    <td class="py-2 pr-4 font-mono text-xs">--complete</td>
+                    <td class="py-2 pr-4"></td>
+                    <td class="py-2">Mark complete/incomplete (true/false)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 pr-4 font-mono text-xs">--pin</td>
+                    <td class="py-2 pr-4"></td>
+                    <td class="py-2">Pin/unpin the task (true/false)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Examples
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Add a high-priority task with labels</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli add -c "Fix login bug" -p "Work" -P 1 -D 2025-04-10 -l "bug,urgent"</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Add a subtask</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli add -c "Write unit tests" -p "Work" --parent-id "abc123"</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Complete a task</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli update --task-id "abc123" --complete true</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Move a task to another project</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli update --task-id "abc123" --project "Personal"</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Voice-to-task with a script</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>#!/bin/bash
+# Record audio, transcribe with Whisper, add as task
+TASK=$(whisper --model tiny record.wav | tail -1)
+planify-cli add --content "$TASK"</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Output -->
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Output Format
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          All commands return JSON output, making it easy to pipe into other tools like <code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm">jq</code>.
+        </p>
+        <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>planify-cli list-projects | jq '.[].name'</code></pre>
+      </section>
+    </div>
+  </SectionContainer>
+</Layout>
