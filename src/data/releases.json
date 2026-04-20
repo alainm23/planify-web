@@ -1,5 +1,17 @@
 [
   {
+    "version": "4.19.0",
+    "date": "2026-04-20",
+    "items": [
+      "Added Summary & Productivity dialog with task stats, progress bars, and configurable daily/weekly goals.",
+      "Added PDF export for projects including tasks, sections, subtasks, priorities, and deadlines.",
+      "Added GNOME Shell search provider — search tasks and projects directly from the Super key.",
+      "Added per-project markdown rendering setting (Global Default / Enabled / Disabled).",
+      "Added \"Copy to Clipboard\" in multi-select toolbar with full task details.",
+      "Support asterisk prefix (`* `) for incompletable tasks (notes), compatible with Todoist."
+    ]
+  },
+  {
     "version": "4.18.3",
     "date": "2026-03-18",
     "items": [
