@@ -269,6 +269,44 @@ import { Icon } from "astro-icon/components";
               </table>
             </div>
           </div>
+
+          <!-- Backup -->
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">backup</h3>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Export a JSON backup</span>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+              Exports all tasks, projects, sections, labels and sources as a JSON backup. Perfect for automated backups via cron.
+            </p>
+
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-4"><code>planify-cli backup --output ~/backup.json</code></pre>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+                    <th class="pb-2 pr-4">Option</th>
+                    <th class="pb-2 pr-4">Short</th>
+                    <th class="pb-2">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700 dark:text-gray-300">
+                  <tr>
+                    <td class="py-2 pr-4 font-mono text-xs">--output</td>
+                    <td class="py-2 pr-4 font-mono text-xs">-o</td>
+                    <td class="py-2">Output file path (defaults to stdout)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -305,6 +343,18 @@ import { Icon } from "astro-icon/components";
 # Record audio, transcribe with Whisper, add as task
 TASK=$(whisper --model tiny record.wav | tail -1)
 planify-cli add --content "$TASK"</code></pre>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Automated daily backup with cron</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code># Save to file
+planify-cli backup --output ~/backup.json
+
+# Pipe to another tool
+planify-cli backup | jq '.items | length'
+
+# Crontab: daily backup at 2am (Flatpak)
+0 2 * * * flatpak run --command=io.github.alainm23.planify.cli io.github.alainm23.planify backup --output ~/backups/planify-$(date +\%Y\%m\%d).json</code></pre>
           </div>
         </div>
       </section>
