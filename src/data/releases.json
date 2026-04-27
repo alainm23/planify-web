@@ -1,5 +1,16 @@
 [
   {
+    "version": "4.19.1",
+    "date": "2026-04-24",
+    "items": [
+      "Fixed task completion failing with 412 when modified on another device — now automatically re-fetches the fresh ETag and retries transparently.",
+      "Fixed sync for servers that don't support sync-token (Posteo and others) — now uses ETag-based sync to detect changes, deletions and completions.",
+      "Fixed creating and deleting projects on servers that don't allow it via CalDAV (Posteo) — now shows a friendly message instead of a raw error.",
+      "Fixed Deck task lists not disappearing after disabling them in Nextcloud.",
+      "Fixed subtasks not being reset when a recurring task advances to its next occurrence."
+    ]
+  },
+  {
     "version": "4.19.0",
     "date": "2026-04-20",
     "items": [
