@@ -1,5 +1,17 @@
 [
   {
+    "version": "4.19.2",
+    "date": "2026-05-14",
+    "items": [
+      "Added automatic daily backup with support for extra backup folder locations.",
+      "Added support for system accent color — Planify now follows your GNOME accent color setting.",
+      "Added CalDAV section support via VTODO List prefix — create, rename and delete sections that sync bidirectionally with other CalDAV clients.",
+      "Added past date selection in the date picker — past days are shown dimmed with a Today button to return to the current month.",
+      "Added Export as .ics option in the context menu for CalDAV tasks.",
+      "Improved change history — added DEADLINE and PARENT tracking, infinite scroll, and expandable/chip display patterns."
+    ]
+  },
+  {
     "version": "4.19.1",
     "date": "2026-04-24",
     "items": [
