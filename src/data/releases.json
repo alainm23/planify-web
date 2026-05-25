@@ -1,5 +1,23 @@
 [
   {
+    "version": "4.19.4",
+    "date": "2026-05-20",
+    "items": [
+      "Fixed a crash when updating a task with no priority set on Mailbox.org and Open-Xchange servers.",
+      "Fixed completed tasks generating an ambiguous local timestamp in the VTODO — now uses UTC with the Z suffix, fixing sync errors with DAVx5 on Android.",
+      "Fixed inconsistent accent colors across the app — accent color logic is now centralized and correctly follows the system accent color setting."
+    ]
+  },
+  {
+    "version": "4.19.3",
+    "date": "2026-05-15",
+    "items": [
+      "Fixed CalDAV sync with Mailbox (Open-Xchange) — calendar data wrapped in CDATA is now parsed correctly, and tasks are no longer skipped when the content-type lacks the component parameter.",
+      "Fixed cursor jumping to the end of the text when editing task titles or descriptions in Today and Scheduled views.",
+      "Fixed long text expanding the sidebar beyond its intended width in HeaderItem."
+    ]
+  },
+  {
     "version": "4.19.2",
     "date": "2026-05-14",
     "items": [
