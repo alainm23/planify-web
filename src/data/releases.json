@@ -1,5 +1,18 @@
 [
   {
+    "version": "4.19.5",
+    "date": "2026-06-05",
+    "items": [
+      "Fixed missed automatic backup on startup — if Planify was closed at midnight, the scheduled backup was silently skipped. Now, if automatic backup is enabled and no backup has run today, one is triggered immediately on startup.",
+      "Fixed completing a recurring task from a notification — it was marking the task as fully completed instead of advancing to the next occurrence. Now correctly calls update_next_recurrency() as the UI does.",
+      "Fixed keyboard navigation UX — Tab in EditableTextView now moves focus to the next widget instead of inserting spaces, and pressing Enter on a focused checkbox now completes the task.",
+      "Fixed attachment file_size integer overflow — file_size is now treated as a string throughout, preventing unhandled overflow errors for values ≥ 2^63.",
+      "Fixed drag and drop reliability and visual feedback in ReorderChild — softer background, subtle border, and rounder corners using the accent color.",
+      "Fixed CalDAV related-to parsing — uses the already known related-id from libical and checks the reltype param to determine if a task is a parent.",
+      "Fixed reading X-PINNED and X-APPLE-SORT-ORDER from CalDAV — replaced ICal.PropertyKind.from_string() with iteration over X_PROPERTY kind and matching by get_x_name(), fixing pin status and sort order persistence with Radicale and other servers."
+    ]
+  },
+  {
     "version": "4.19.4",
     "date": "2026-05-20",
     "items": [
