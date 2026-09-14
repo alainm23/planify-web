@@ -1,5 +1,25 @@
 [
   {
+    "version": "4.20.0",
+    "date": "2026-09-10",
+    "items": [
+      "Added Nextcloud Deck integration — boards, stacks and cards sync two-way as projects, sections and tasks, with labels, archive, drag and drop between stacks and boards, and order preservation.",
+      "Added a productivity goals system — daily and weekly targets (fixed or dynamic), a mini progress widget in the app menu, and an 8-week activity heatmap in the productivity report.",
+      "Added \"Repeat from completion date\" — recurring tasks can repeat from the day they are completed instead of their due date, per task, matching how apps like Tasks.org behave (local and Todoist).",
+      "Added detection and import of CalDAV accounts from GNOME Online Accounts — a subtle link under the account list imports Nextcloud/ownCloud (via Login Flow v2) or generic CalDAV accounts with the server URL prefilled.",
+      "Added a completed tasks section to the Today view, toggleable from the view settings.",
+      "Added a project filter to the Completed view and sort/filter controls to the All Tasks view, matching the project views.",
+      "Added All Tasks and Labels as Home View options in Preferences.",
+      "Added a calendar sources preferences page to choose which calendars are shown.",
+      "Added quick date shortcuts to the Deadline picker (Tomorrow, In 3 days, Next week, In 2 weeks, In a month), matching the Date picker.",
+      "Added keyboard shortcuts to jump to projects (Ctrl+1–Ctrl+9) and cycle through them (Ctrl+Page Down / Ctrl+Page Up).",
+      "Improved the date picker with natural-language search (via Chrono), suggestion chips, and pre-selection of the item's existing due date.",
+      "Improved QuickFind — searches task descriptions, shows the parent project name for sections, adds a result count footer, and highlights a snippet when the match is in the description.",
+      "Improved the PDF export — long titles wrap (with character breaking for URLs), task descriptions and colored labels are included, and text renders via Pango so emoji show in color. The export toast gains an \"Open\" button.",
+      "Added drag-and-drop and context-menu task creation on Scheduled section headers, pre-filling the date in Quick Add."
+    ]
+  },
+  {
     "version": "4.19.5",
     "date": "2026-06-05",
     "items": [
